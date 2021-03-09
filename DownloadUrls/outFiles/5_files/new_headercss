@@ -1,0 +1,82 @@
+*{margin:0;padding:0;}
+a{text-decoration:none; color:#000;}
+a img{border:none;}
+a:focus{outline:none;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;}
+img{border:0;vertical-align:top;}
+input,select,textarea{outline:0;}
+textarea{resize:none;}
+table{border-collapse:collapse;border-spacing:0;}
+var,em{font-weight:normal;font-style:normal;}
+body{font-family:"Microsoft YaHei","SimSun";font-size:14px;}
+ul,ol,dl,li{list-style:none;}
+input{margin:0;padding:0;border:0;outline:none;}
+.clearfix:after {content:"\200B"; display:block; height:0; clear:both;}
+.clearfix {*zoom:1;}
+.noDesktop{display:none;}
+
+/*公用头部开始*/
+.g_header{width:100%;height:162px;border-bottom:#901323 1px solid;background:#BD1A2D;}
+.g_main{width:1200px;margin:0 auto;}
+.g_header .u_logo{float:left;margin:30px 0 0 10px;}
+.m_search{width:410px;height:48px;border-radius:5px;float:left;margin:56px 0 0 45px;background:#fff;}
+.m_search .u_search_left{width:116px;height:48px;border-right:1px solid #BD1A2D;float:left;z-index:99;}
+.m_search .u_search_left .mod-dropdownlist{width:100%;height:100%;position:relative;}
+.m_search .u_search_left .mod-dropdownlist #dropdownThemeForddl_album{width:80px;height:48px;line-height:48px;background:url(../images/zmhd/arrow_bottom1.png) no-repeat right center;font-size:14px;color:#bd1a2d;margin:0 auto;display:block;}
+.m_search .u_search_left .dropdown-list{width:100%!important;background:#fff;position:absolute;top:48px;left:0!important;display:none;}
+.m_search .u_search_left .dropdown-list li{width:100%;height:30px;text-align:center;line-height:30px;font-size:14px;border-top:1px solid #BD1A2D;}
+.m_search .u_search_right{width:293px;height:48px;float:right;}
+.m_search .u_search_right #qt1{width:248px;height:36px;float:left;margin:6px 0 0 10px;}
+.m_search .u_search_right #btn1{width:30px;height:30px;float:left;margin:9px 0 0 0;background:url(../images/zmhd/btn.jpg) no-repeat;}
+.m_beijing_box{width:212px;float:right;margin-top:56px;}
+.m_beijing_box .u_beijing_logo{float:left;}
+.u_beijing_guide{float:left;margin:3px 0 0 18px;width:60px;height:24px;position:relative;}
+.u_beijing_guide a{color:#fff;font-size:12px;}
+.u_beijing_guide span{display:block;width:34px;height:100%;font-size:12px;color:#fff;line-height:24px;background:url(../images/zmhd/arrow_bottom2.png) no-repeat right center;}
+.u_beijing_guide span.on{background:url(../images/zmhd/arrow_top2.png) no-repeat right center;}
+.u_beijing_guide ul{position:absolute;top:24px;left:0;display:none;}
+.u_beijing_guide ul li a{color:#fff;font-size:12px;}
+
+/*导航部分*/
+.g_nav{width:100%;height:62px;background:#BD1A2D;position:relative;}
+.m_nav li{padding:0 25px;display:block;float:left;height:62px;line-height:62px;color:#fff;font-size:24px;margin-left:45px;}
+.m_nav li a{ color:#fff;}
+.m_nav li.on{background:url(../images/head_nav.jpg) repeat-x center 56px;}
+.m_nav li.on .g_nav_content{display:block;}
+.m_nav li.on5{background:none;}
+.g_nav_content{width:100%;height:39px;background:#FCF0D6;border-bottom:1px solid #F7E1AF;position:absolute;top:62px;left:0;display:none;}
+.g_nav_content ul{margin-left:125px;}
+.g_nav_content li{float:left;line-height:39px;font-size:16px;margin-right:42px;padding:0;margin-left:0;height:39px;}
+.g_nav_content li.on{border:none;}
+.g_nav_content li a{ color:#000;}
+
+.g_nav_content ul{ margin:0 auto;}
+.g_nav_content ul li{margin:0; padding:0 21px;}
+.g_nav_content .ul_zwfw{width:530px;}
+.g_nav_content .ul_ywdt{width:750px;}
+.g_nav_content .ul_zwgk{width:760px;}
+.g_nav_content .ul_zmhd{width:760px;}
+.g_nav_content .ul_csfzx{width:636px;}
+
+/*公用头部结束*/
+
+/*公用尾部开始*/
+.g_footer{width:100%;padding:30px 0;background:#BD1A2D;height:150px;font-size:14px;color:#fff;}
+.g_footer .u_logo{float:left;margin:48px 0 0 100px;}
+.m_foot1{width:300px;height:125px;background:#AA1729;float:left;margin-left:168px;padding-top:25px;}
+.m_foot1 li{float:left;margin:0 0 0 67px;line-height:48px;}
+.m_foot1 li a{color:#fff;}
+.m_foot2{width:280px;height:125px;background:#AA1729;float:left;margin-left:5px;padding-top:25px;}
+.m_foot2 p{line-height:36px;padding-left:22px;}
+.m_foot3{width:207px;height:150px;background:#AA1729;float:left;margin-left:5px;}
+.m_foot3 ul{margin-left:20px;}
+.m_foot3 li{float:left;width:80px;margin:20px 8px 0 0;}
+.m_foot3 li img{width:80px;height:80px;}
+.m_foot3 li p{margin-top:8px; text-align:center;}
+.g_bottom{width:100%;height:55px;background:#DABB85;font-size:14px;}
+.g_bottom{text-align:center;line-height:55px;}
+
+/*公用尾部结束*/
+
+.m_footer{ display: none; }
+.g_footer_2{ display: none; }

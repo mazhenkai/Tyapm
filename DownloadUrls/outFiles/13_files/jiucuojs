@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全国政府网站信息报送系统</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #fbecec4d;
+        }
+
+        .main_wrap {
+            width: 729px;
+            height: 382px;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-top: 1px solid #f3eded;
+        }
+
+        .content_wrap {
+            width: 770px;
+            height: 350px;
+            background: #f2f2f2;
+            position: absolute;
+            left: -5%;
+            top: -8%;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            box-shadow: 5px 5px 7px 0px #bdbbbb;
+        }
+
+        .content_wrap .header {
+            height: 50px;
+            background: #0066ff;
+            box-shadow: 5px 5px 7px 0px #bdbbbb;
+            position: relative;
+        }
+
+        .tip_icon {
+            position: absolute;
+            top: 4px;
+            display: inline-block;
+
+            /*background: url(./tip.png) no-repeat;*/
+            height: 28px;
+            background-size: contain;
+            left: 12px;
+        }
+
+        .tip_icon:before {
+            position: absolute;
+            content: '';
+            border-top: 10px transparent dashed;
+            border-left: 14px transparent dashed;
+            border-right: 14px transparent dashed;
+            border-bottom: 10px #fff solid;
+        }
+
+        .tip_icon2 {
+            position: absolute;
+            top: 14px;
+            left: 23px;
+            z-index: 10;
+            width: 0;
+            height: 0;
+        }
+
+        .tip_icon2:before,
+        .tip_icon2:after {
+            position: absolute;
+            content: '!';
+            color: #000;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+        }
+
+        .tip_icon:before {
+            border-bottom: 20px #fff solid;
+        }
+
+        .tip_icon:after {
+            top: 1px;
+            /*覆盖并错开1px*/
+            border-bottom: 10px #fff solid;
+        }
+
+        .content_wrap .header h4 {
+            color: #fff;
+            line-height: 50px;
+            padding-left: 50px;
+        }
+
+        .header_tip {
+            margin-top: 25px;
+            width: 100%;
+            height: 16px;
+            background: #0066ff;
+            margin-bottom: 10px;
+        }
+
+        .con_main_second {
+            width: 75%;
+            height: 200px;
+            position: relative;
+        }
+
+        .second_content {
+            position: absolute;
+            width: 450px;
+            height: 106px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .second_content p {
+            line-height: 50px;
+            font-size: 24px;
+        }
+
+        .second_content .pfonts {
+            white-space: nowrap;
+        }
+
+        .second_content a {
+            text-decoration: none;
+        }
+
+        .second_content .leftdistance {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!--<div class="main_wrap"></div>-->
+        <div class="content_wrap">
+            <div>
+                <div class="header_tip"></div>
+                <div class="header">
+                    <i class="tip_icon"></i>
+                    <i class="tip_icon2"></i>
+                    <h4>温馨提示</h4>
+                </div>
+            </div>
+            <div class="con_main_second">
+                <div class="second_content">
+                    <p class="pfonts">“全国政府网站信息报送系统”已启用新地址:</p>
+                    <p class="leftdistance">
+                        <a href="https://zfwzgl.www.gov.cn/boxpro/custom/pucha">https://zfwzgl.www.gov.cn/boxpro/custom/pucha
+                        </a>
+                    </p>
+                    <p class="leftdistance"><span id='seconds'>5</span>&nbsp;秒后将自动跳转到新地址</p>
+                </div>
+            </div>
+        </div>
+</body>
+<script type="text/javascript">
+
+    function countDown() {
+        //获取初始时间
+        var time = document.getElementById("seconds");
+
+        //获取到id为time标签中的数字时间
+        if (time.innerHTML == 1) {
+            //等于0时清除计时，并跳转该指定页面
+            window.location.href = "https://zfwzgl.www.gov.cn/boxpro/custom/pucha";
+        } else {
+            time.innerHTML = time.innerHTML - 1;
+        }
+    }
+    //1000毫秒调用一次
+    window.setInterval("countDown()", 1000);
+</script>
+
+</html>

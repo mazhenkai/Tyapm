@@ -1,0 +1,787 @@
+﻿
+function viewport() {
+	var e = window, a = 'inner';
+	if (!('innerWidth' in window )) {
+		a = 'client';
+		e = document.documentElement || document.body;
+	}
+	return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
+}
+
+(function(){
+	
+	//app 端改变的内容
+	var hash = window.location.hash;
+	if (hash == "#JingchengApp") {
+		$("#channelNav").hide();
+        $("body").css({
+			backgroundPosition:"center 0"
+		});
+		$(".footer").hide();
+	}
+})();
+
+/*-------------组件4----------------*/
+(function(){
+	if($('.list4').size()>0){
+		var $carousel=$('.list4 .carousel');
+		$carousel.each(function () {
+			var picNum = $(this).find('.carousel-inner .item').size();
+			var strId = $(this).attr('id');
+			for (var i = 0; i < picNum; i++) {
+				$('<li data-target="#' + strId + '" data-slide-to="' + i + '"></li>').appendTo($(this).find('.carousel-indicators'));
+			}
+			$(this).find('ol li').eq(0).addClass('active');
+		})
+		$carousel.carousel({
+			interval: 4000
+		});
+		if ( ! $.browser.msie ) {
+			$carousel.hammer().on('swipeleft', function () {
+				$(this).carousel('next');
+			});
+			$carousel.hammer().on('swiperight', function () {
+				$(this).carousel('prev');
+			});
+		}
+		
+	}
+
+	
+})();
+/*-------------组件4a----------------*/
+(function() {
+    if ($('.list4a').size() > 0) {
+        var $carousela = $('.list4a .carousel');
+        $carousela.each(function() {
+            var picNum = $(this).find('.carousel-inner .item').size();
+            var strId = $(this).attr('id');
+            for (var i = 0; i < picNum; i++) {
+                $('<li data-target="#' + strId + '" data-slide-to="' + i + '"></li>').appendTo($(this).find('.carousel-indicators'));
+            }
+            $(this).find('ol li').eq(0).addClass('active');
+        })
+        $carousela.carousel({
+            interval: 4000
+        });
+        if (!$.browser.msie) {
+            $carousela.hammer().on('swipeleft', function() {
+                $(this).carousel('next');
+            });
+            $carousela.hammer().on('swiperight', function() {
+                $(this).carousel('prev');
+            });
+        }
+
+    }
+
+})();
+/*-------------组件5----------------*/
+(function(){
+	if($('.list5 li').size()>0){
+		if (viewport().width > 480) {
+			$('.list5 li:nth-child(3n+1)').addClass('noLeftGap');
+		}else{
+			$('.list5 li').removeClass('noLeftGap');
+		}
+	}
+})();
+
+/*---------------组件11-------------------*/
+(function(){
+	if($('.list11').size()>0){
+		$('.list11 li:nth-child(3n+2)').addClass('mid');
+		$('.list11 li:nth-child(2n)').addClass('light');
+		var tmpArray = $('.list11').attr('class').split(" ");
+		var strLayout = "";
+		for (var i = 0; i < tmpArray.length; i++) {
+			if (tmpArray[i].search("layout") != -1) {
+				strLayout = tmpArray[i].substr(6, tmpArray[i].length - 6);
+			}
+		}
+		$('.list11 li').each(function () {
+			var targClassName = "width" + strLayout.substr($(this).index(), 1);
+			$(this).addClass(targClassName);
+		})
+		$('.list11 li a').each(function () {
+			if ($(this).height() <= 27) {
+				$(this).css('line-height', '54px');
+			}
+		})
+	}
+    
+})();
+
+
+/*-------------组件12----------------*/
+(function(){
+	if($('.list12').size()>0){
+		$('.list12Small li:nth-child(2n)').addClass('hasGap');
+		$('.list12 li:nth-child(2n)').after('<div class="clearfix"></div>');
+		if (viewport().width > 979) {
+			$('.list12Small img:first').load(function(){
+				var smallHeight=$('.list12Small img:first').height()*2+8;
+				$('.list12Big').css('height', smallHeight);
+			})
+		}
+	}
+})();
+/*-------------组件12b----------------*/
+
+(function(){
+
+	if($('.list12b').size()>0){
+		$('.list12bSmall li:nth-child(2n)').addClass('hasGap');
+		if (viewport().width > 767) {
+			$('.list12b li:nth-child(3n)').after('<div class="clearfix"></div>');
+		}else{
+			$('.list12b li:nth-child(2n)').after('<div class="clearfix"></div>');
+		}
+		if (viewport().width > 979) {
+			$('.list12bSmall img:first').load(function(){
+				var smallHeight=$('.list12bSmall img:first').height()*2+8;
+				$('.list12bBig').css('height', smallHeight);
+			})
+		}
+	}
+})();
+
+
+/*-------------组件13----------------*/
+(function () {
+	$('.list13').each(function(){
+		var theEle=this;
+		var $this=$(this);
+		theEle.h4Width=0;
+		if($this.find('h4').size()!=0){
+			theEle.h4Width=$this.find('h4').width()+35;
+		}
+		$this.find('.list13R').css('left',theEle.h4Width);
+		$this.find('ul').addClass('u1').wrap('<div class="marqueenTank">');
+		theEle.marqueenItemLen = 0;
+		theEle.marqueenItemDiff = parseInt($this.find('.u1 li:first').css('margin-right'));
+		theEle.marqueenStep = 1;
+		theEle.marqueenWidth = $this.width() - theEle.h4Width;
+		console.log("marqueenWidth="+theEle.marqueenWidth);
+		
+		$this.find('.marqueenTank .u1 li').each(function () {
+			console.log("xxx="+$(this).width());
+			theEle.marqueenItemLen += $(this).width() + theEle.marqueenItemDiff;
+		})
+		theEle.marqueenItemLen +=theEle.marqueenItemDiff;
+		console.log("marqueenItemLen="+theEle.marqueenItemLen);
+		$this.find('.u1').width(theEle.marqueenItemLen);
+		$this.find('.u1').clone().removeClass('u1').addClass('u2').appendTo($this.find('.marqueenTank'));
+		$this.find('.u2').css('left', theEle.marqueenItemLen + theEle.marqueenItemDiff);
+
+		function updateMarqueen() {
+			this.marqueenWidth = $this.width() - theEle.h4Width;
+			$this.find('.list13R').css('width', theEle.marqueenWidth);
+			$this.find('.list13R').css('top','2px');
+		}
+		updateMarqueen();
+		window.onresize = function () {
+			updateMarqueen();
+		}
+
+		function startMarqueen() {
+			$this.find('ul').each(function () {
+				if (parseInt($(this).css('left')) <= (theEle.marqueenItemLen * -1)) {
+					$(this).css('left', theEle.marqueenItemLen + theEle.marqueenItemDiff);
+				}
+				$(this).css('left', parseInt($(this).css('left')) - theEle.marqueenStep);
+			})
+		}
+		theEle.theMarqueen1 = setInterval(startMarqueen, 30);
+		$this.hover(function () {
+			clearInterval(theEle.theMarqueen1);
+		}, function () {
+			theEle.theMarqueen1 = setInterval(startMarqueen, 30);
+		})
+		
+	})
+	
+})();
+
+/*-------------组件18----------------*/
+(function(){
+	if($('.list18 li').size()>0){
+		if (viewport().width >= 767) {
+			$('.list18 li:nth-child(4n+1)').addClass('noLeftGap');
+			$('.list18 li:nth-child(4n)').after('<div class="clearfix"></div>');
+		}else{
+			$('.list18 li').removeClass('noLeftGap');
+			$('.list18 li:nth-child(2n+1)').addClass('noLeftGap');
+			$('.list18 li:first').addClass('noLeftGap');
+			$('.list18 li:nth-child(2n)').after('<div class="clearfix"></div>');
+		}
+	}
+})();
+
+/*-------------组件19----------------*/
+(function(){
+	if($('.list19 li').size()>0){
+		if(viewport().width>480 && viewport().width<979){
+			$('.list19 div.clearfix').remove();
+			$('<div class="clearfix"></div>').insertAfter($('.list19 li:nth-child(2n)'));
+		}
+	}
+})();
+
+
+
+/*-------------组件20----------------*/
+(function(){
+	//幻灯组件list20
+    var curThumbPos=0;
+    $('.list20 li').eq(4).removeClass('noLeftGap');
+    updateInfo(0);
+    $('.list20 a.bigPhoto').attr('href', $('.list20 li:first').find('a.title').attr('href'));
+    $('.list20 a.bigPhoto img').attr('src', $('.list20 li:first').find('img').attr('src'));
+
+    if($(window).width()<=767){
+        var ww=$(window).width();
+        if($(window).width()>480){
+            $('.list20 ul li').css('width',ww*0.2);
+            $('.list20 a.btnNext').css('left',ww*0.95);
+            $('.list20 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+        }else{
+            $('.list20 ul li').css('width',ww*0.4);
+            $('.list20 ul li').css('margin-right',ww*0.02);
+            $('.list20 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+        }
+
+    }
+
+    var $thumbScroll=$('.list20 ul li').eq(1);
+    var moveDis=parseInt($thumbScroll.css('width'))+parseInt($thumbScroll.css('margin-left'));
+    //console.log("step="+moveDis);
+    $('.list20 li a.pic').click(function () {
+        curThumbPos=$(this).parent().index();
+        updateInfo(curThumbPos);
+        return false;
+    })
+    $('.list20 .btnNext').click(function(){
+        var strAni="-="+moveDis+"px";
+		console.log("aaa")
+        $('.list20 ul').animate({
+            left: strAni
+        }, 400, function () {
+			console.log("dddd=");
+            $('.list20 ul li:first').appendTo($('.list20 ul')) ;
+            $('.list20 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap').siblings().removeClass('noLeftGap');
+            $('.list20 ul').css('left',0);
+            updateInfo(curThumbPos);
+        });
+
+        return false;
+    })
+    $('.list20 .btnPrev').click(function(){
+        var strAni="+="+moveDis+"px";
+        strPosStart="-"+moveDis+"px";
+        console.log(strAni)
+        $('.list20 ul li:last').prependTo($('.list20 ul')) ;
+        $('.list20 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+        $('.list20 ul').css('left',strPosStart);
+        $('.list20 ul').animate({
+            left: strAni
+        }, 400, function () {
+            updateInfo(curThumbPos);
+        });
+
+        return false;
+    })
+
+    function updateInfo(idx){
+        var $curLi=$('.list20 ul li').eq(idx);
+        var strCur=$.trim($curLi.find('a.title').text());
+        $('.curTitle').text(strCur);
+        $curLi.addClass("cur").siblings().removeClass('cur');
+        $('.list20 a.bigPhoto').attr('href', $curLi.find('a').attr('href'));
+        $('.list20 a.bigPhoto img').attr('src', $curLi.find('img').attr('src'));
+    }
+    updateInfo(0);
+})();
+
+/*-------------组件24----------------*/
+(function(){
+if(location.href.indexOf("qlstage")==-1){
+	$('.list24 .zb').hide();
+}
+
+var $colSet=$('<div class="colSet clearfix"><ul></ul><ul></ul><ul></ul><ul></ul></div><a href="#" class="loadMore">加载更多>>>></a>');
+	$colSet.prependTo($('.list24'));
+
+
+	var lnZb=$('.list24 .zb li').size();
+    var lnInitShow=parseInt($('.list24').attr('dataInit'));//初始显示数量
+    var lnStepShow=parseInt($('.list24').attr('dataStep'));//每次加载数量
+    var lnLoaded=lnInitShow;
+    var numPerRow;
+
+    if($(window).width()>767){
+        numPerRow=4;
+    }else if($(window).width()<480){
+        numPerRow=1;
+    }else{
+        numPerRow=2;
+    }
+    for(var i=0;i<lnInitShow;i++){
+        $('.list24 .zb li').eq(0).appendTo($('.list24 .colSet ul').eq(i%numPerRow));
+    }
+    $('.list24 a.loadMore').click(function(){
+		
+        for(var i=0;i<lnStepShow;i++){
+            $('.list24 .zb li').eq(0).appendTo($('.list24 .colSet ul').eq(i%numPerRow));
+        }
+        lnLoaded+=lnStepShow;
+
+        if(lnLoaded>=lnZb){
+            $('a.loadMore').hide();
+        }
+        return false;
+    })
+})();
+
+/*-------------组件25----------------*/
+(function(){
+	if($(window).width()>480){
+	$('.list25 li').mouseenter(function () {
+		$(this).find('.tankIntro').animate({
+			top: '0'
+		}, 500, function () {
+
+		});
+	})
+	$('.list25 li').mouseleave(function () {
+		$(this).find('.tankIntro').animate({
+			top: '100%'
+		}, 500, function () {
+
+		});
+	})
+	}
+})();
+
+/*-------------组件26----------------*/
+(function(){
+	if($('.list26').size()>0) {
+
+		var list26_arrayPos = new Array();
+		var list26_numPic = $('.list26 li').size();
+		var list26_tankW = parseInt($('.list26').parent().width());
+		var list26_picW = parseInt($('.list26 .initSize').css('width'));
+		var list26_picH = parseInt($('.list26 .initSize').css('height'));
+		var list26_ratioWh = list26_picH / list26_picW;
+
+		if ($(window).width() < 767) {
+			list26_picW = $(window).width() * 0.7;
+			list26_picH = list26_picW * list26_ratioWh;
+		}
+		$('.list26 li').removeClass('initSize');
+		console.log(list26_ratioWh);
+
+		var list26_radius = $('.list26').parent().width() * 0.4 / 2;//容器宽度的80%
+		var list26_angleStep = Math.PI * 2 / list26_numPic;
+
+		function markCircle() {
+			for (var i = 0; i < list26_numPic; i++) {
+				var tmpW = parseInt((Math.cos(list26_angleStep * i) + 2) / 3 * list26_picW);
+				var tmpPosX = parseInt(list26_radius * Math.sin(list26_angleStep * i));
+				list26_arrayPos[i] = new Object();
+				list26_arrayPos[i].w = tmpW;
+				list26_arrayPos[i].h = parseInt(tmpW * list26_ratioWh);
+				list26_arrayPos[i].zIdx = tmpW;
+				list26_arrayPos[i].x = tmpPosX;
+				list26_arrayPos[i].opa = (Math.cos(list26_angleStep * i) + 2) / 3;
+				//console.log(list26_arrayPos[i].h);
+
+			}
+		}
+
+		function initPic() {
+			for (var i = 0; i < list26_numPic; i++) {
+				$('.list26 li').eq(i).css('width', list26_arrayPos[i].w);
+				$('.list26 li').eq(i).css('height', list26_arrayPos[i].h);
+				$('.list26 li').eq(i).css('z-index', list26_arrayPos[i].zIdx);
+				$('.list26 li').eq(i).css('left', list26_arrayPos[i].x - list26_arrayPos[i].w / 2 + list26_tankW / 2);
+				$('.list26 li').eq(i).css('top', (list26_picH - list26_arrayPos[i].h) / 2);
+				$('.list26 li').eq(i).css('opacity', list26_arrayPos[i].opa);
+				$('.list26 li').eq(i).attr('dataCurPos', i);
+				console.log($('.list26 li').eq(i).css('height'))
+			}
+			$('.list26 a.btn3dNext,.list26 a.btn3dPrev').css('top', list26_arrayPos[0].h / 2 - 25)
+		}
+
+		function moveNext() {
+			$('.list26 li').each(function () {
+				var nextPos = (parseInt($(this).attr('dataCurPos')) + 1) % list26_numPic;
+				$(this).animate({
+					left: list26_arrayPos[nextPos].x - list26_arrayPos[nextPos].w / 2 + list26_tankW / 2,
+					top: (list26_picH - list26_arrayPos[nextPos].h) / 2,
+					width: list26_arrayPos[nextPos].w,
+					height: list26_arrayPos[nextPos].h,
+					opacity: list26_arrayPos[nextPos].opa
+				}, 500, function () {
+					$(this).css('z-index', list26_arrayPos[nextPos].zIdx);
+					$(this).attr('dataCurPos', nextPos);
+
+				})
+			})
+		}
+
+		function movePrev() {
+			$('.list26 li').each(function () {
+				var nextPos = (parseInt($(this).attr('dataCurPos')) + list26_numPic - 1) % list26_numPic;
+				$(this).animate({
+					left: list26_arrayPos[nextPos].x - list26_arrayPos[nextPos].w / 2 + list26_tankW / 2,
+					top: (list26_picH - list26_arrayPos[nextPos].h) / 2,
+					width: list26_arrayPos[nextPos].w,
+					height: list26_arrayPos[nextPos].h,
+					opacity: list26_arrayPos[nextPos].opa
+				}, 500, function () {
+					$(this).css('z-index', list26_arrayPos[nextPos].zIdx);
+					$(this).attr('dataCurPos', nextPos);
+
+				})
+			})
+		}
+
+		markCircle();
+		initPic();
+		$('.list26 a.btn3dNext').click(function () {
+			moveNext();
+			return false;
+		})
+		$('.list26 a.btn3dPrev').click(function () {
+			movePrev();
+			return false;
+		})
+	}
+})();
+
+/*-------------组件27----------------*/
+
+(function(){
+
+	if(location.href.indexOf("qlstage")==-1){
+		$('.list27 ul').css('position','absolute');
+		$('.list27 ul li').css('float','left');
+	}
+
+	var $list27ul=$('.list27 ul');
+
+	var list27_origImgW=parseInt($('.list27 ul li img').css('width'));
+	var list27_origImgH=parseInt($('.list27 ul li img').css('height'));
+	var list27_ratioWh=list27_origImgH/list27_origImgW;
+	var numList27=$('.list27 ul li').size();
+	var widthList27=$(window).width()-($(window).width()-$('.container').width())/2;
+	var widthList27li=widthList27/2;
+	if($(window).width()<=480){
+		widthList27=parseInt($('.container').css('width'));
+		widthList27li=widthList27;
+	}
+	var heightList27=parseInt(widthList27li)*list27_ratioWh;
+
+
+	var list27_strStepMl='-='+widthList27li;
+	var list27_strStepMr='+='+widthList27li;
+
+
+	$('.list27').parent().css('height',heightList27+30);
+	$('.list27').css('width',widthList27);
+	$('.list27').css('height',heightList27);
+	$('.list27 ul li').css('width',widthList27li);
+	$('.list27 ul li img').css('width','100%');
+	$('.list27 ul li img').css('height',heightList27);
+
+	$('.list27 .mask').css('width',widthList27li);
+	$('.list27 .mask').css('height',heightList27);
+
+	$('.list27 .mask .title').text($list27ul.find('li').eq(1).find('.title').text());
+	$('.list27 .mask .intro').text($list27ul.find('li').eq(1).find('.intro').text());
+
+	if($(window).width()>480){
+		$('.list27 .btnNext').css('left',widthList27li);
+		$('.list27 .btnPrev').css('left',widthList27li-20);
+	}
+	if($(window).width()<=480){
+		var list27_liH480=parseInt($('.list27 ul li:first').css('height'))+20
+		$('.list27').parent().css('height',list27_liH480);
+		$('.list27').css('height',list27_liH480);
+	}
+	$('.list27 .btnNext').click(function(){
+		$list27ul.find('li:first').clone().appendTo($list27ul);
+		$list27ul.animate({
+			left:list27_strStepMl
+		},500,function(){
+			$list27ul.find('li:first').remove();
+			$list27ul.css('left',0);
+			$('.list27 .mask .title').text($list27ul.find('li').eq(1).find('.title').text());
+			$('.list27 .mask .intro').text($list27ul.find('li').eq(1).find('.intro').text());
+		})
+		return false;
+	})
+	$('.list27 .btnPrev').click(function(){
+		$list27ul.find('li:last').clone().prependTo($list27ul);
+		$list27ul.css('left',parseInt(widthList27li)*-1);
+		$list27ul.animate({
+			left:list27_strStepMr
+		},500,function(){
+			$list27ul.find('li:last').remove();
+			$('.list27 .mask .title').text($list27ul.find('li').eq(1).find('.title').text());
+			$('.list27 .mask .intro').text($list27ul.find('li').eq(1).find('.intro').text());
+		})
+		return false;
+	})
+})();
+
+
+$(window).resize(function(){
+	console.log("small="+$(window).width());
+	console.log("big="+viewport().width);
+
+	if($('.list5 li').size()>0){
+		if (viewport().width > 480) {
+			$('.list5 li:nth-child(4n)').addClass('noLeftGap');
+		}else{
+			$('.list5 li').removeClass('noLeftGap');
+		}
+	}
+
+	if($('.list12').size()>0){
+		if (viewport().width > 979) {
+			if($('.list12Small img:first').height()>0){
+				var smallHeight=$('.list12Small img:first').height()*2+8;
+				$('.list12Big').css('height', smallHeight);
+			}else{
+				$('.list12Small img:first').load(function(){
+					var smallHeight=$('.list12Small img:first').height()*2+8;
+					$('.list12Big').css('height', smallHeight);
+				})
+			}
+		}else{
+		$('.list12Big').css('height', 'auto');
+	}
+	}
+
+	if($('.list12b').size()>0){
+		$('.list12bSmall div.clearfix').remove();
+		if (viewport().width > 767) {
+			$('.list12b li:nth-child(3n)').after('<div class="clearfix"></div>');
+		}else{
+			$('.list12b li:nth-child(2n)').after('<div class="clearfix"></div>');
+		}
+		if (viewport().width > 979) {
+			if($('.list12bSmall img:first').height()>0){
+				var smallHeight=$('.list12bSmall img:first').height()*2+8;
+				console.log("bigPicHeight="+smallHeight);
+				$('.list12bBig').css('height', smallHeight);
+			}else{
+				$('.list12bSmall img:first').load(function(){
+					var smallHeight=$('.list12bSmall img:first').height()*2+8;
+					console.log("bigPicHeight="+smallHeight);
+					$('.list12bBig').css('height', smallHeight);
+				})
+			}
+
+		}else{
+			$('.list12bBig').css('height', 'auto');
+		}
+	}
+
+});
+
+/*-------------组件28----------------*/
+
+(function(){
+	//幻灯组件list28
+	var curThumbPos=0;
+	$('.list28 li').eq(4).removeClass('noLeftGap');
+
+	if($(window).width()<=767){
+		var ww=$(window).width();
+		if($(window).width()>480){
+			$('.list28 ul li').css('width',ww*0.2);
+			//$('.list28 a.btnNext').css('left',ww*0.95);
+			$('.list28 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+		}
+	}
+
+	var $thumbScroll=$('.list28 ul li').eq(1);
+	var moveDis=parseInt($thumbScroll.css('width'))+parseInt($thumbScroll.css('margin-right'));
+
+	$('.list28 .btnNext').click(function(){
+		var strAni="-="+moveDis+"px";
+		var $theUrl=$(this).parent().find('ul');
+		$theUrl.animate({
+			easing:"linear",
+			left: strAni
+		}, 400, function () {
+			$theUrl.find('li:first').appendTo($theUrl) ;
+			$theUrl.find('li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap').siblings().removeClass('noLeftGap');
+			$theUrl.css('left',0);
+
+		});
+
+		return false;
+	})
+	$('.list28 .btnPrev').click(function(){
+		var strAni="+="+moveDis+"px";
+		strPosStart="-"+moveDis+"px";
+		var $theUrl=$(this).parent().find('ul');
+		$theUrl.find('li:last').prependTo($theUrl) ;
+		$theUrl.find('li:last').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+		$theUrl.css('left',strPosStart);
+		$theUrl.animate({
+			easing:"linear",
+			left: strAni
+		}, 400, function () {
+
+		});
+
+		return false;
+	})
+
+
+})();
+
+/*-------------组件32----------------*/
+(function(){
+	//幻灯组件list32
+	var curThumbPos=0;
+	var $comp=$('.list32');
+	$comp.find('li').eq(4).removeClass('noLeftGap');
+	updateInfo(0);
+	$comp.find('a.bigPhoto').attr('href', $comp.find('li:first').find('a.title').attr('href'));
+	$comp.find('a.bigPhoto img').attr('src', $comp.find('li:first').find('img').attr('src'));
+
+	if($(window).width()<=767){
+		var ww=$(window).width();
+		if($(window).width()>480){
+			$comp.find('ul li').css('width',ww*0.2);
+			$comp.find('a.btnNext').css('left',ww*0.95);
+			$comp.find('ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+		}else{
+			$comp.find('ul li').css('width',ww*0.4);
+			$comp.find('ul li').css('margin-right',ww*0.02);
+			$comp.find('ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+		}
+
+	}
+
+	var $thumbScroll=$comp.find('ul li').eq(1);
+	var moveDis=parseInt($thumbScroll.css('width'))+parseInt($thumbScroll.css('margin-left'));
+	//console.log("step="+moveDis);
+	$comp.find('li a.pic').click(function () {
+		curThumbPos=$(this).parent().index();
+		updateInfo(curThumbPos);
+		return false;
+	})
+	$comp.find('.btnNext').click(function(){
+		var strAni="-="+moveDis+"px";
+		$this.parent().find('ul').animate({
+			left: strAni
+		}, 400, function () {
+			console.log("$this="+$(this));
+			$('.list20 ul li:first').appendTo($('.list20 ul')) ;
+			$('.list20 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap').siblings().removeClass('noLeftGap');
+			$('.list20 ul').css('left',0);
+			updateInfo(curThumbPos);
+		});
+
+		return false;
+	})
+	$('.list20 .btnPrev').click(function(){
+		var strAni="+="+moveDis+"px";
+		strPosStart="-"+moveDis+"px";
+		console.log(strAni)
+		$('.list20 ul li:last').prependTo($('.list20 ul')) ;
+		$('.list20 ul li:first').addClass('noLeftGap').siblings().removeClass('noLeftGap');
+		$('.list20 ul').css('left',strPosStart);
+		$('.list20 ul').animate({
+			left: strAni
+		}, 400, function () {
+			updateInfo(curThumbPos);
+		});
+
+		return false;
+	})
+
+	function updateInfo(idx){
+		var $curLi=$('.list20 ul li').eq(idx);
+		var strCur=$.trim($curLi.find('a.title').text());
+		$('.curTitle').text(strCur);
+		$curLi.addClass("cur").siblings().removeClass('cur');
+		$('.list20 a.bigPhoto').attr('href', $curLi.find('a').attr('href'));
+		$('.list20 a.bigPhoto img').attr('src', $curLi.find('img').attr('src'));
+	}
+	updateInfo(0);
+})();
+
+
+/*-------------组件33----------------*/
+(function() {
+	var $list33=$('.list33');
+	var list33_curIdx=0;
+	var list33_size=$list33.find('li').size();
+	
+	function updateList33(curIdx){
+		console.log("curIdx="+curIdx);
+		var $curLi=$list33.find('ul li').eq(curIdx);
+		console.log("title="+$curLi.find('a.title').text());
+		$list33.find('.txtTank .title').text($curLi.find('a.title').text());
+		
+		$list33.find('.txtTank .intro').text($curLi.find('p.intro').text());
+		$list33.find('.picFront a').attr('href',$curLi.find('a.pic').attr('href'));
+		$list33.find('.picFront img').attr('src',$curLi.find('a.pic img').attr('src'));
+		if(curIdx<(list33_size-1)){
+			$list33.find('.picBack img').attr('src',$list33.find('ul li').eq(curIdx+1).find('a.pic img').attr('src'));
+		}else{
+			$list33.find('.picBack img').attr('src',$list33.find('ul li:first').find('a.pic img').attr('src'));
+		}
+		list33_curIdx=curIdx;
+		
+	}
+	updateList33(list33_curIdx);
+	$list33.find('a.btnNext').click(function(){
+		if(list33_curIdx<(list33_size-1)){
+			updateList33(list33_curIdx+1);
+		}else{
+			updateList33(0);
+		}
+		return false;
+	});
+	$list33.find('a.btnPrev').click(function(){
+		if(list33_curIdx==0){
+			updateList33(list33_size-1);
+		}else{
+			updateList33(list33_curIdx-1);
+		}
+		return false;
+	});
+})();
+
+
+
+
+/*-------------组件34----------------*/
+(function() {
+	var curRan=-1;
+	$('.list34 li').each(function(){
+		var idx=$(this).index();
+		var curWidth=$(this).width();
+		var tempRan=parseInt(Math.random()*10);
+		while(tempRan==curRan){
+			tempRan=parseInt(Math.random()*10);
+		}
+		console.log(curRan);
+		curRan=parseInt(Math.random()*10);
+		var initY=10+tempRan*40;
+		curRan=tempRan;
+		var timeRun=20+Math.random()*10;
+		var timeDelay=idx*4;
+		TweenMax.set($(this),{top:initY});
+		TweenMax.to($(this),timeRun,{left:-1*(curWidth+500),delay:timeDelay}).repeat(999);
+	})
+})();

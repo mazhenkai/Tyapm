@@ -1,0 +1,57 @@
+﻿var curFontSize=2;
+$('.btnBigFont').click(function(){
+//console.log("bigger");
+    if(curFontSize<3){
+        curFontSize+=1;
+        $('.blockContent').removeClass('fontSize'+(curFontSize-1)).addClass('fontSize'+curFontSize);
+    }
+    return false;
+})
+$('.btnSmallFont').click(function(){
+//console.log("smaller");
+    if(curFontSize>1){
+        curFontSize-=1;
+        $('.blockContent').removeClass('fontSize'+(curFontSize+1)).addClass('fontSize'+curFontSize);
+    }
+    return false;
+})
+
+
+
+
+var refurl=document.referrer;
+if(refurl.indexOf("yinhua")>-1){
+    var str=("千龙音画-"+document.title).replace(/-千龙网·中国首都网/,"");
+    document.title=str;
+}
+if(refurl.indexOf("capitalnews")>-1){
+    var str=("首都新闻-"+document.title).replace(/-千龙网·中国首都网/,"");
+    document.title=str;
+
+}
+
+var system = {
+    win: false,
+    mac: false,
+    xll: false,
+    ipad:false
+};
+//检测平台
+var p = navigator.platform;
+system.win = p.indexOf("Win") == 0;
+system.mac = p.indexOf("Mac") == 0;
+system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
+if (system.win || system.mac || system.xll||system.ipad) {
+
+
+} else {
+
+    if(refurl.indexOf("www")>-1){
+        var str=("手机千龙网-"+document.title).replace(/-千龙网·中国首都网/,"");
+        document.title=str;
+
+    }
+}
+
+

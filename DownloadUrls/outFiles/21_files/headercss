@@ -1,0 +1,310 @@
+@charset "utf-8";
+/* 初始化CSS  重置浏览器样式*/
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img {
+  border: none;
+}
+/*为了照顾ie6 链接图片有边框*/
+ul,
+ol,
+li {
+  list-style: none;
+}
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0 none;
+}
+select,
+input {
+  vertical-align: middle;
+}
+select,
+input,
+textarea {
+  font-size: 12px;
+  margin: 0;
+  outline: none;
+  font-family: "微软雅黑", "MicrosoftYaHei";
+}
+textarea {
+  resize: none;
+}
+table {
+  border-collapse: collapse;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+i,
+b {
+  font-style: normal;
+}
+body {
+  font-size: 16px;
+  color: #000000;
+  font-family: "微软雅黑", "MicrosoftYaHei";
+}
+a {
+  color: #000000;
+  text-decoration: none;
+  font-family: "微软雅黑", "MicrosoftYaHei";
+  font-size: 16px;
+}
+a:hover {
+  text-decoration: none;
+}
+.header {
+  width: 100%;
+  height: 130px;
+  background: #bd1a2d;
+}
+.header .header-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+.header .header-container .outreach {
+  height: 32px;
+  line-height: 32px;
+}
+.header .header-container .outreach a {
+  color: #fff;
+  font-size: 12px;
+  margin: 0 5px;
+  float: left;
+}
+.header .header-container .outreach span {
+  width: 1px;
+  color: #fff;
+  height: 12px;
+  display: block;
+  background: #fff;
+  float: left;
+  margin-top: 10px;
+}
+.header .header-container .outreach .units {
+  float: left;
+}
+.header .header-container .outreach .feature {
+  float: right;
+}
+.header .header-container .search {
+  height: 75px;
+  margin-top: 10px;
+}
+.header .header-container .search .logo {
+  width: 454px;
+  height: 75px;
+  float: left;
+}
+.header .header-container .search .form {
+  float: right;
+  margin-top: 13px;
+}
+.header .header-container .search .form form {
+  float: left;
+  margin-right: 15px;
+  width: 398px;
+  height: 48px;
+  background: #fff;
+  border-radius: 5px;
+}
+.header .header-container .search .form .searchTxt {
+  height: 48px;
+  width: 222px;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 48px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.header .header-container .search .form .synthesis {
+  width: 102px;
+  height: 48px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+  position: relative;
+}
+.header .header-container .search .form .synthesis .select-menu-div {
+  height: 48px;
+  background: #bd1a2d;
+}
+.header .header-container .search .form .synthesis .select-menu-div input {
+  font-size: 14px;
+  width: 90px;
+  background: #bd1a2d;
+  color: #fff;
+  height: 46px;
+  text-align: left;
+  border: 1px solid #fff;
+  padding-left: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+.header .header-container .search .form .synthesis .select-menu-div .fa-caret-down {
+  display: block;
+  float: right;
+  background: url("../../images/fa-caret-down.png") no-repeat center;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 4px;
+  top: 12px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.header .header-container .search .form .synthesis .select-menu-div .select-menu-i {
+  transform: rotate(180deg);
+}
+.header .header-container .search .form .synthesis .select-menu-ul {
+  position: absolute;
+  z-index: 9999;
+  display: none;
+  width: 102px;
+  text-align: center;
+  background: #fff;
+  overflow: hidden;
+  top: 45px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.header .header-container .search .form .synthesis .select-menu-ul li {
+  height: 30px;
+  line-height: 30px;
+  color: #000000;
+}
+.header .header-container .search .form .synthesis .select-menu-ul .select-this {
+  color: #bd1a2d;
+}
+.header .header-container .search .form .searchBtn {
+  width: 24px;
+  height: 24px;
+  background: url("../../images/seach.png") no-repeat center center #ffffff;
+  cursor: pointer;
+  margin: 0 12px;
+}
+.header .header-container .search .form .bj-logo {
+  width: 54px;
+  height: 56px;
+  float: right;
+}
+.nav {
+  width: 100%;
+  height: 60px;
+  background: #bd1a2d;
+  position: relative;
+  border-top: solid 1px #8f1322;
+}
+.nav .navigation {
+  width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+}
+.nav .navigation li {
+  width: 240px;
+  float: left;
+  height: 100%;
+}
+.nav .navigation li a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 60px;
+  height: 58px;
+  line-height: 58px;
+  display: block;
+  text-align: center;
+}
+.nav .navigation li .selected {
+  border-bottom: 2px solid #dabb85;
+  color: #dabb85;
+}
+.nav .navigation li a:hover {
+  border-bottom: 2px solid #dabb85;
+}
+.nav .navigation .menu_secondary {
+  width: 100%;
+  background: #fff6e2;
+  border-bottom: 1px solid #f7ce8c;
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  display: none;
+  z-index: 99999;
+}
+.nav .navigation .menu_secondary ul {
+  width: 1000px;
+  margin: 0 auto;
+  height: 40px;
+  overflow: hidden;
+}
+.nav .navigation .menu_secondary ul li {
+  width: auto;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 63px;
+  float: left;
+}
+.nav .navigation .menu_secondary ul li a {
+  display: inline-block;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  color: #000;
+}
+.nav .navigation .menu_secondary ul li a:hover {
+  color: #bd1a2d;
+}
+.nav .navigation .menu_secondary .menu_zhxw li {
+  padding: 0 63px;
+}
+.nav .navigation .menu_secondary .menu_zwgk li {
+  padding: 0 28px;
+}
+.nav .navigation .menu_secondary .menu_zwfw li {
+  padding: 0 64px;
+}
+.nav .navigation .menu_secondary .menu_ymhd li {
+  padding: 0 50px;
+}
+.nav .navigation .menu_secondary .menu_zjfs li {
+  padding: 0 68px;
+}
+.fill {
+  margin: 70px auto 40px auto !important;
+}

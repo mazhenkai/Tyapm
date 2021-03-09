@@ -1,0 +1,32 @@
+.pc_hide{
+  display: none;
+}
+/*面包屑导航*/
+.BreadcrumbNav{position:relative;width: 1040px;margin: 0px auto 15px;}
+.BreadcrumbNav .comment{position:absolute;top: 0;right: 130px;height: auto;overflow: hidden;}
+.collectionLocation, .commentLocation{
+  float: left;
+    font-family: Microsoft YaHei;
+    cursor: pointer;margin-left: 20px;
+}
+.com_img1{    
+  width: 13px;
+    height: 44px;
+    float: left;
+    background: url(http://www.gov.cn/govweb/xhtml/2016gov/zhengce/20181123zhengce/images/shoucang_bg.png) no-repeat 100% 15px;}
+.com_word{
+  height: 44px;
+    line-height: 44px;
+    color: #6f6f6f;
+    font-family: Microsoft YaHei;
+    float: left;
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 12px;}
+.com_word:hover{ color:#c50001;}
+.com_img2 {
+    width: 11px;
+    height: 44px;
+    float: left;
+    background: url(http://www.gov.cn/govweb/xhtml/2016gov/zhengce/20181123zhengce/images/message_bg.png) no-repeat 100% 16px;
+}

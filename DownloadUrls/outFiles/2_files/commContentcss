@@ -1,0 +1,344 @@
+.container{
+    overflow: hidden;
+}
+.list15 td{
+    vertical-align: top;
+}
+.funcNav {
+     background: #fff;
+     border-bottom: solid 1px #A7A7A7;
+    height: 56px;
+}
+.funcNav .nav>li>a, .funcNav .nav>li>a:hover {
+     color: #292929;
+    line-height: 56px;
+}
+.widget_header #adBanner{
+    margin-top: 10px;
+}
+.blockSearch{
+    margin-top: 18px;
+    text-align: right;
+}
+h1{
+    font-size:36px;
+}
+.title .span12{
+    margin-top: 5px;
+}
+.infoBar{
+    border-bottom: dotted 1px #000;
+    margin-top: 5px;
+    padding-bottom: 7px;
+}
+.infoBar,.infoBar a{
+    font-size:12px;
+    color:#292929;
+}
+.funcBtnSet{
+    margin-right: 0;
+    margin-left: auto;
+    width:50%;
+    margin-top: -10px;
+}
+.blockContent{
+    font-size:16px;
+    overflow: hidden;
+}
+.blockContent p{
+    line-height: 1.8em;
+    margin-top: 27px;
+	text-indent:2em;
+}
+#bdshare{
+    width: 69px;
+}
+span.bds_more {
+    background-image: url(http://img1.qianlong.net/templates/qianlong/common/css/img/commContent_btnShare.png) !important;
+    background-repeat: no-repeat;
+    background-position: 0 0 !important;
+    cursor: pointer;
+    padding: 0;
+    margin:0;
+    display: inline-block;
+    width:44px;
+    height: 44px;
+    text-indent: -9999px;
+}
+.btnPrint {
+    background: url(img/commContent_btnPrint.png) no-repeat;
+    height: 44px;
+    width:44px;
+    display: inline-block;
+    text-indent: -9999px;
+    margin-right: 25px;
+}
+.btnBigFont {
+    background: url(img/commContent_btnBigFont.png) no-repeat;
+    height: 44px;
+    width:44px;
+    display: inline-block;
+    text-indent: -9999px;
+    margin-right: 25px;
+}
+.btnSmallFont {
+    background: url(img/commContent_btnSmallFont.png) no-repeat;
+    height: 44px;
+    width:44px;
+    display: inline-block;
+    text-indent: -9999px;
+}
+h3.titleBar1{
+  color:#0A5095;
+    border-color:#BA8C00;
+}
+.sourceTitle {
+    font-size: 16px;
+    margin-top: 30px;
+    text-indent: 2em;
+}
+.blockRel h3.titleBar1{
+    font-weight: bold;
+}
+.blockComment{
+    margin-top: 30px;
+}
+.blockComment .textarea{
+    width:87%;
+    height: 100px;
+}
+.blockComment .f-r{
+    font-size:16px;
+}
+.fontSize3 .article-content,.fontSize3 .article-content p{
+    text-indent: 2em;
+
+    font-size:18px;
+}
+.fontSize2 .article-content,.fontSize2 .article-content p{
+    text-indent: 2em;
+    font-size:16px;
+}
+.fontSize1 .article-content,.fontSize1 .article-content p{
+    text-indent: 2em;
+    font-size:14px;
+}
+.fontSize1 .article-content td,.fontSize2 .article-content td,.fontSize3 .article-content td{
+	text-indent:0;
+}
+.fontSize1 .article-content td p,.fontSize2 .article-content td p,.fontSize3 .article-content td p {
+    text-indent: 0;
+}
+
+.blockContent td {
+    border: solid 1px #000;
+	padding: 0 1px;
+}
+.page li a{
+    font-size: 14px;
+}
+.page .read-btn{
+    padding-top: 40px;
+    *padding-top: 0px;
+    *border:solid 1px #ccc;
+}
+.pagination ul{
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+}
+.pagination ul>li>a.now{
+    background: #0A5095;
+    color:#fff;
+}
+.blockRel .list15 td a{
+    color:#000;
+}
+.labelLyBar p.labelLy {
+    width: 11%;
+    font-size: 16px;
+}
+.labelLyBar .ov{
+    width:88%;
+}
+.labelLyBar .username-area,.labelLyBar .anonymous{
+    display: inline-block;
+    margin-right: 20px;
+}
+.comment-form input.btn-post {
+    font-family: "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+    width: 10%;
+    border: none;
+    background: #5788AA;
+    font-size: 20px;
+    margin-bottom: 10px;
+    vertical-align: bottom;
+    line-height: 40px;
+    color: #fff;
+}
+.comment-item {
+    margin-bottom: 20px;
+}
+.comment-content p.cont{
+    padding-left: 20px;
+    margin-top: 8px;
+}
+.comment-info span.postime {
+    margin-left: 10px;
+    color: #999;
+}
+.label-anonymous input {
+    vertical-align: top;
+}
+.blockComment .f-r {
+    border-bottom: solid 2px #88ABC3;
+    padding-bottom: 10px;
+}
+.article-comment a{
+    /*color:#000;*/
+}
+.article-comment .title{
+    display: none;
+}
+#sideBar #commBlock2 {
+    margin-top: 30px;
+}
+.blockAd {
+    text-align: center;
+}
+.blockRel h3.titleBar1 {
+    font-weight: bold;
+}
+#moreread{ margin-bottom: 20px;}
+#moreread h3 {
+    color: #0A5095;
+
+    font-size: 18px;
+    line-height: 30px;
+    text-indent: 0px;
+
+
+
+    font-weight: bold;
+
+
+}
+#moreread ul li{ font-size: 16px; line-height: 1.8em; list-style: none;  text-indent: 0px;}
+#moreread ul li a{}
+
+.blockSz .list16 li{
+	position:relative;
+}
+.blockSz .list16 li a.title {
+    font-size: 14px;
+    font-weight: normal;
+}
+.state-indicator {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+
+    z-index: 1;
+}
+.article-content p img {
+    margin-left: 0em;
+}
+p.editor{
+	text-align:right;
+	margin-top:20px;
+}
+h4.subtitle {
+    text-align: left;
+    margin: 20px 0;
+    font-weight: normal;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+/* desktop */
+@media (min-width: 979px) and (max-width: 1199px) {
+    .blockSearch{
+        margin-top: 14px;
+    }
+    .funcBtnSet{
+        width:58%;
+    }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .list15 td a {
+        font-size: 14px;
+    }
+    .blockSearch{
+        margin-top: 8px;
+    }
+    .funcBtnSet{
+        width:80%;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .comment-form input.btn-post {
+        font-size: 16px;
+    }
+    .labelLyBar .ov {
+        width: 84%;
+    }
+    .labelLyBar p.labelLy {
+        width: 14%;
+    }
+    .blockComment .textarea {
+        width: 85%;
+    }
+    .state-indicator {
+        z-index: 2;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px){
+    .title h1{
+        font-weight:normal;
+        width:96%;
+        margin:20px auto;
+        line-height: 135%;
+        font-size:24px;
+    }
+	h4.subtitle {
+		width: 96%;
+		margin-left: 2%;
+	}
+    #searchBar{
+        border-bottom:solid 1px #A7A7A7;
+    }
+    .blockInfo,.blockContent{
+        width:96%;
+        margin:0 auto;
+    }
+    .state-indicator {
+        z-index: 3;
+    }
+	.article-content p img {
+		margin-left: -2em;
+	}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .fontSize2 .article-content, .fontSize2 .article-content p {
+        font-size: 16px;
+        line-height: 1.8em;
+        text-indent: 2em;
+    }
+    .title h1 {
+        font-size: 22px;
+    }
+    .state-indicator {
+        z-index: 4;
+    }
+	.article-content p img {
+		margin-left: 0;
+	}
+
+}

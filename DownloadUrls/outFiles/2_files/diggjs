@@ -1,0 +1,67 @@
+var digg = {
+    done : [],
+	data : null,
+	get  : function(contentid, obj){
+			var t = this;
+			$.getJSON(APP_URL+'?app=digg&controller=digg&action=digg&contentid='+contentid+'&jsoncallback=?', function(data){
+			digg.data = data;
+			console.log("get data:"+data);																					
+			t.render(data.supports, obj);
+			
+			
+			
+			
+			if(data.done) {
+				t.done[contentid] = true;
+			}
+			
+			
+			
+			
+			
+		})
+	},
+	set: function(contentid, obj){
+
+		var t = this;
+		
+		
+		
+		
+		 if(t.done[contentid]) {
+			alert('您已经赞过了');
+			return;
+		} 
+		
+		
+		
+		
+		
+		console.log("set digg.data:"+digg.data);
+		$.getJSON(APP_URL+'?app=digg&controller=digg&action=digg&contentid='+contentid+'&jsoncallback=?&flag=1', function(data){
+			console.log("set data="+data);
+			
+			
+			
+			if(data > 0) {
+				t.done[contentid] = true;
+				var diggtime;
+				t.render(data, obj);
+			} else {
+				alert('您已经赞过了');
+				return;
+			}
+			
+			
+			
+			
+			
+			t.render(data, obj);
+		});
+	},
+	render: function(v, obj){
+			//var t = this;
+			s = "<em></em>"+parseInt(v);
+			$('#'+obj).html(s);
+	}	
+}

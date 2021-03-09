@@ -1,0 +1,9 @@
+    $('.navMore').click(function () {
+        $('#channelNav .noMain').toggleClass('hidden-phone');
+        if ($(this).text() == "更多+") {
+            $(this).text('收起-')
+        } else {
+            $(this).text('更多+')
+        }
+    })
+

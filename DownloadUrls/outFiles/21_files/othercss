@@ -1,0 +1,689 @@
+.txtEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrap {
+  width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* 通用文字列表 */
+.location {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: solid 4px #b02c2f;
+  font-size: 14px;
+  color: #999;
+  padding-left: 30px;
+}
+.location h2 {
+  font-size: 20px;
+  color: #b02c2f;
+  font-weight: bold;
+  display: inline;
+  padding-right: 30px;
+  line-height: 20px;
+  border-right: solid 2px #b02c2f;
+  margin-right: 30px;
+}
+.location a {
+  font-size: 14px;
+}
+.secondList {
+  padding: 30px 30px 0 30px;
+  width: 1040px;
+}
+.secondList li {
+  overflow: hidden;
+  line-height: 40px;
+  height: 40px;
+}
+.secondList li .genre {
+  color: #b02c2f;
+  margin-right: 5px;
+}
+.secondList li .flag {
+  background: url(/2020/common/images/list_jggs_begin.png) no-repeat;
+  width: 88px;
+  height: 26px;
+  float: right;
+  text-indent: -1978px;
+  overflow: hidden;
+  margin-top: 7px;
+}
+.secondList li .flag_off {
+  background: url(/2020/common/images/list_jggs_complete.png) no-repeat;
+  width: 88px;
+  height: 26px;
+  float: left;
+  overflow: hidden;
+  margin-top: 7px;
+  margin-left: 10px;
+}
+.secondList li .jggs {
+  background: url(/2020/common/images/lingx.png) no-repeat center;
+  float: right;
+  width: 90px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  margin-top: 7px;
+}
+.secondList li .jggs a {
+  font-size: 14px !important;
+  color: #FFF;
+  width: auto;
+  line-height: 26px;
+  float: none;
+  text-indent: -1978px;
+}
+.secondList li a {
+  width: 90%;
+  line-height: 40px;
+  display: block;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.secondList li a i {
+  display: block;
+  width: 4px;
+  height: 10px;
+  background: #dae9f7;
+  border-radius: 2px;
+  float: left;
+  margin: 15px 10px 0 0;
+}
+.secondList li a:hover i {
+  background: #b02c2f;
+}
+.secondList li span.date {
+  float: right;
+  font-size: 16px;
+}
+.secondList li.line {
+  height: 20px;
+  border-bottom: solid 2px #f5f5f5;
+  margin-bottom: 20px;
+}
+.page {
+  margin-bottom: 20px;
+}
+/* 通用内容页 */
+.txtContent {
+  padding: 30px 60px;
+  width: 980px;
+  overflow: hidden;
+}
+.txtContent h1 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+}
+.txtContent .resBox {
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  color: #999;
+  margin: 15px 0;
+  border-bottom: solid 2px #f5f5f5;
+  padding-bottom: 15px;
+}
+.txtContent .resBox span.resource {
+  margin-right: 20px;
+}
+.txtContent .txtDetail {
+  font-size: 16px;
+  line-height: 2;
+  border-bottom: solid 2px #f5f5f5;
+  padding-bottom: 20px;
+  min-height: 450px;
+  overflow: hidden;
+}
+.txtContent .txtDetail table {
+  margin: 0 auto !important;
+}
+.txtContent .labelBox {
+  overflow: hidden;
+  margin-top: 10px;
+}
+.txtContent .labelBox .label {
+  float: left;
+  overflow: hidden;
+}
+.txtContent .labelBox .label li {
+  float: left;
+  margin-right: 20px;
+  height: 40px;
+  line-height: 40px;
+  color: #bed4ee;
+}
+.txtContent .labelBox .label li i {
+  background: url(/2020/common/images/icon_content_label.png) no-repeat;
+  width: 22px;
+  height: 18px;
+  float: left;
+  margin: 11px 5px 0 0;
+}
+.txtContent .labelBox .label li a {
+  color: #bed4ee;
+}
+.txtContent .shareBox {
+  float: right;
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background: #f2f7fe;
+  border-radius: 10px;
+}
+.txtContent .shareBox h4 {
+  width: 40px;
+  padding: 0 10px;
+  float: left;
+}
+.txtContent .shareBox .bdsharebuttonbox {
+  float: left;
+  margin-top: 7px;
+}
+.txtContent img {
+  max-width: 960px;
+}
+.ralateBox {
+  margin-top: 20px;
+}
+.ralateBox h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.ralateBox li {
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #b02c2f;
+}
+.ralateBox li a {
+  color: #b02c2f;
+}
+.ralateBox li i {
+  display: block;
+  background: url(/2020/common/images/icon_relateNews_dot.png) no-repeat;
+  width: 8px;
+  height: 8px;
+  float: left;
+  margin: 11px 10px 0 0;
+}
+/* 政策解读 */
+.zcjdWrap .whiteBox {
+  width: 760px;
+  float: left;
+}
+.zcjdWrap .txtContent {
+  width: 660px;
+  padding: 30px 50px;
+}
+.typeBox {
+  border: solid 1px #ebebeb;
+  overflow: hidden;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.typeBox li {
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+}
+.typeBox li span {
+  margin-right: 5px;
+}
+.zcjdRight {
+  width: 330px;
+  float: right;
+  overflow: hidden;
+  background: #FFF;
+  padding-bottom: 80px;
+}
+.zcjdRight .relateZcjd {
+  width: 310px;
+  margin: 0 auto;
+}
+.zcjdRight .relateZcjd h2 {
+  font-size: 18px;
+  color: #b02c2f;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.zcjdRight .relateZcjd a {
+  display: block;
+  width: 310px;
+  height: 170px;
+}
+.zcjdRight .relateZcjd a img {
+  width: 310px;
+  height: 170px;
+}
+.zcjdRight .ralateBox {
+  width: 310px;
+  margin: 20px auto 0;
+}
+/* 左右结构文字列表 */
+.secondTxtListWrap .whiteBox {
+  width: 760px;
+  float: left;
+}
+.secondTxtListWrap .secondList {
+  width: 700px;
+}
+.secondTxtListWrap .ralateBox h2 {
+  margin-bottom: 0;
+  color: #b02c2f;
+}
+.secondTxtListWrap .ralateBox li {
+  height: 40px;
+  line-height: 40px;
+}
+.secondTxtListWrap .ralateBox li a {
+  color: #333;
+}
+.secondTxtListWrap .ralateBox li a:hover {
+  color: #b02c2f;
+}
+.secondTxtListWrap .ralateBox li i {
+  margin: 16px 10px 0 0;
+}
+.secondTxtListWrap .listRightBanner {
+  width: 310px;
+  margin: 0 auto;
+}
+.secondTxtListWrap .listRightBanner a {
+  display: block;
+  height: 90px;
+  margin-top: 10px;
+}
+.secondTxtListWrap .listRightBanner a img {
+  width: 310px;
+  height: 90px;
+}
+/* 政策解读内容页 */
+.fullTypeBox {
+  padding: 20px 80px;
+  width: 818px;
+  margin: 20px auto 0;
+}
+/* 领导介绍 */
+.ldjsSlider {
+  padding: 30px 50px 50px 50px;
+  width: 1000px;
+  overflow: hidden;
+  position: relative;
+  min-height: 450px;
+}
+.ldjsSlider .hd {
+  width: 1000px;
+  height: 42px;
+  margin: 0 auto;
+}
+.ldjsSlider .hd li {
+  float: left;
+  width: 142px;
+  height: 40px;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 40px;
+  border-top: solid 1px #f5f5f5;
+  border-bottom: solid 1px #f5f5f5;
+  cursor: pointer;
+}
+.ldjsSlider .hd li a {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+.ldjsSlider .hd li.first {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-left: solid 1px #dbebff;
+}
+.ldjsSlider .hd li.last {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-right: solid 1px #dbebff;
+}
+.ldjsSlider .hd li.on {
+  background: #b02c2f;
+  border-top: solid 1px #b02c2f;
+  border-bottom: solid 1px #b02c2f;
+}
+.ldjsSlider .hd li.on a {
+  color: #FFF;
+}
+.ldjsSlider .hd li.first.on {
+  border-left: solid 1px #b02c2f;
+}
+.ldjsSlider .hd li.last.on {
+  border-right: solid 1px #b02c2f;
+}
+.ldjsSlider .bd .ldjsList li {
+  width: 1000px;
+  overflow: hidden;
+  padding-bottom: 30px;
+  border-bottom: solid 2px #f5f5f5;
+  margin-top: 30px;
+  position: relative;
+}
+.ldjsSlider .bd .ldjsList li .pic {
+  width: 160px;
+  height: 190px;
+  float: left;
+  overflow: hidden;
+}
+.ldjsSlider .bd .ldjsList li .pic img {
+  width: 160px;
+  height: 190px;
+  border-radius: 10px;
+}
+.ldjsSlider .bd .ldjsList li .txtBox {
+  width: 820px;
+  overflow: hidden;
+  float: right;
+  position: relative;
+}
+.ldjsSlider .bd .ldjsList li .txtBox h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #b02c2f;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.ldjsSlider .bd .ldjsList li .txtBox p {
+  line-height: 2;
+}
+.ldjsSlider .bd .ldjsList li .txtBox .ldjsDetail {
+  width: 120px;
+  height: 34px;
+  border: solid 1px #dbebff;
+  border-radius: 5px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.ldjsSlider .bd .jointlyList {
+  overflow: hidden;
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ldjsSlider .bd .jointlyList li a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  width: 130px;
+  float: left;
+  padding-left: 20px;
+}
+/* 部门街道列表 */
+.bmListBox {
+  padding: 0 30px;
+  width: 1040px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.bmListBox .title {
+  height: 30px;
+  line-height: 30px;
+}
+.bmListBox .title h2 {
+  display: inline;
+  padding: 3px 20px;
+  background: #eff3fc;
+  border-radius: 5px;
+  color: #b02c2f;
+  font-weight: bold;
+}
+.bmListBox ul {
+  overflow: hidden;
+}
+.bmListBox ul li {
+  float: left;
+  width: 115px;
+  height: 40px;
+  line-height: 40px;
+}
+.blankDiv {
+  height: 50px;
+}
+/* 政府采购文字列表 */
+.zfcgChannel {
+  margin: 30px auto 0;
+  width: 1040px;
+  height: 40px;
+  background: #eff3fc;
+  border: solid 1px #dbebff;
+  line-height: 40px;
+}
+.zfcgChannel li {
+  float: left;
+}
+.zfcgChannel li a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b02c2f;
+  padding: 0 20px;
+}
+.zfcgChannel li.on {
+  background: #b02c2f;
+}
+.zfcgChannel li.on a {
+  color: #FFF;
+}
+.catalogxxgk {
+  padding: 0 40px;
+  overflow: hidden;
+}
+.catalogxxgk .catalog_title {
+  height: 40px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: 45px 0 10px 0px;
+}
+.catalogxxgk .catalog_title h2 {
+  color: #b02c2f;
+  float: right;
+  font-weight: bold;
+  font-size: 18px;
+  width: 170px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.catalogxxgk .catalog_title h2 span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(/resources/images/xxgk/lastx.png) no-repeat;
+  float: right;
+  margin-top: 10px;
+}
+.catalogxxgk table {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+.catalogxxgk table tr {
+  border: 1px solid #f5f5f5;
+  height: 30px;
+  line-height: 30px;
+}
+.catalogxxgk table td {
+  padding-left: 10px;
+}
+.catalogxxgk table .Special {
+  width: 150px;
+  background-color: #b02c2f;
+  text-align: center;
+  color: #ffffff;
+  padding: 0px;
+}
+.catalogxxgk table .Special_content {
+  width: 420px;
+}
+.secondPhotoIntro {
+  font-size: 16px;
+  line-height: 34px;
+  text-indent: 2em;
+  padding: 25px;
+}
+.secondPhoto {
+  padding: 0 25px 30px;
+  width: 1050px;
+  overflow: hidden;
+}
+.secondPhoto li {
+  width: 322px;
+  height: 262px;
+  float: left;
+  margin: 0 40px 10px 0;
+}
+.secondPhoto li a {
+  display: block;
+  width: 316px;
+  height: 256px;
+  border: solid 1px #e6e6e6;
+  padding: 2px;
+}
+.secondPhoto li a .pic {
+  width: 316px;
+  height: 206px;
+  overflow: hidden;
+}
+.secondPhoto li a .pic img {
+  width: 316px;
+  height: 206px;
+}
+.secondPhoto li a .tit {
+  width: 316px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.secondPhoto li a:hover {
+  background: #d8e8ff;
+}
+.topBannerBox {
+  width: 1080px;
+  height: 100px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+.topBannerBox a {
+  display: block;
+  width: 346px;
+  height: 100px;
+  overflow: hidden;
+  margin-right: 20px;
+  float: left;
+}
+.topBannerBox a img {
+  width: 346px;
+  height: 100px;
+}
+.year-list {
+  padding: 30px;
+  width: 1040px;
+  overflow: hidden;
+}
+.year-list li {
+  width: 512px;
+  height: 140px;
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 17px;
+}
+.year-list li a {
+  display: block;
+  height: 140px;
+}
+.year-list .year-first {
+  width: 1041px;
+}
+.year-list li:nth-last-child(1),
+.year-list li:nth-last-child(3),
+.year-list li:nth-last-child(5),
+.year-list li:nth-last-child(7) {
+  margin-right: 0px;
+}
+.table-content {
+  padding: 30px 30px 57px 30px;
+  width: 1040px;
+}
+.table-content table {
+  table-layout: fixed;
+}
+.table-content table tr {
+  height: 35px;
+}
+.table-content table tr td {
+  line-height: 27px;
+  padding: 4px 0px;
+  border: 0px;
+}
+.table-content table tr td:nth-child(1) {
+  width: 82px;
+  vertical-align: top;
+  padding: 4px 25px;
+  text-align: right;
+}
+.table-content table tr:nth-child(odd) {
+  background: #f2faff;
+}
+.table-content table tr:nth-last-child(1) {
+  border-top: 2px solid #fff;
+}
+.table-content table .reply-title {
+  background: #f1f1f1;
+}
+.table-content table .reply {
+  background: #f9f9f9;
+  color: #666666;
+  padding: 4px 20px;
+  border-left: 2px solid #FFF;
+}
+.page {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.page .on {
+  background: #b02c2f;
+  color: #FFF;
+  border: none;
+}
+.page a {
+  padding: 5px 10px;
+  border: solid 1px #adadad;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.page a .num {
+  border: solid 1px #FFF;
+}
+.page span {
+  padding: 5px 10px;
+  border: solid 1px #adadad;
+  margin-right: 10px;
+  border-radius: 5px;
+}
